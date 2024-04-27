@@ -1,13 +1,14 @@
 import * as React from "react";
+import Layout from "../components/layout/layout";
 
 const IndexPage = () => {
   return (
-    <main>
+    <Layout>
       <h1>L'isola di Circe</h1>
-    </main>
+    </Layout>
   );
 };
 
 export default IndexPage;
 
-export const Head = () => <title>L'isola di Circe - Assisi</title>;
+export const Head = () => <title>L'Isola di Circe - Assisi</title>;

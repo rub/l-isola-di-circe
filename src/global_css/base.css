@@ -1,0 +1,31 @@
+:root {
+  --color-warm-grey-1: hsl(50, 30%, 96%);
+  --color-warm-grey-2: hsl(51, 7%, 40%);
+  --color-warm-grey-3: hsl(53, 6%, 25%);
+  --color-warm-grey-4: hsl(53, 4%, 14%);
+  --color-white: hsl(0, 0%, 100%);
+  --color-accent-yellow-ocher: hsl(53, 69%, 23%);
+  --color-misc-lilac: hsl(316, 61%, 88%);
+  --color-misc-lilac-light: hsl(312, 50%, 96%);
+  --color-misc-sky-blue: hsl(187, 61%, 80%);
+  --color-misc-sky-blue-light: hsl(180, 48%, 94%);
+  --color-misc-butterscotch: hsl(40, 69%, 77%);
+  --color-misc-butterscotch-light: hsl(37, 70%, 94%);
+  --color-misc-spring-green: hsl(95, 56%, 76%);
+  --color-misc-spring-green-light: hsl(92, 43%, 93%);
+  --color-misc-cream: hsl(53, 70%, 73%);
+  --color-misc-cream-light: hsl(53, 60%, 92%);
+  --color-misc-peach: hsl(16, 70%, 78%);
+  --color-misc-peach-light: hsl(14, 79%, 95%);
+  --font-title: 48px;
+  --font-p-lg: 20px;
+  --font-p-md: 18px;
+  --font-p-sm: 16px;
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 16px;
+  --space-4: 24px;
+  --space-5: 32px;
+  --space-6: 64px;
+  --size-main: 1216px;
+}

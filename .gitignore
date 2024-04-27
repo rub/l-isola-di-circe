@@ -1,3 +1,15 @@
+# Dependency directories
 node_modules/
+
+# Gatsby build output
 .cache/
 public
+
+# Yarn
+.pnp.*
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/sdks
+!.yarn/versions

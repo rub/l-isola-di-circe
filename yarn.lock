@@ -1665,6 +1665,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@fontsource/nunito@npm:^5.0.18":
+  version: 5.0.18
+  resolution: "@fontsource/nunito@npm:5.0.18"
+  checksum: 88e16be0b8bee0ddafd950a1f23ac0c9ff800716d15593bc01583ffe2c3e6ddd901f4844842ebe8b2cbf7322a4820f6a73e3aa30e5b80ecc0288de89e1dfcbbb
+  languageName: node
+  linkType: hard
+
 "@gatsbyjs/parcel-namer-relative-to-cwd@npm:^2.13.1":
   version: 2.13.1
   resolution: "@gatsbyjs/parcel-namer-relative-to-cwd@npm:2.13.1"
@@ -9229,6 +9236,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "l-isola-di-circe@workspace:."
   dependencies:
+    "@fontsource/nunito": ^5.0.18
     gatsby: ^5.13.3
     gatsby-plugin-image: ^3.13.1
     gatsby-plugin-postcss: ^6.13.1

@@ -17,6 +17,7 @@
   --color-misc-cream-light: hsl(53, 60%, 92%);
   --color-misc-peach: hsl(16, 70%, 78%);
   --color-misc-peach-light: hsl(14, 79%, 95%);
+  --font-nunito: "Nunito", sans-serif;
   --font-title: 48px;
   --font-p-lg: 20px;
   --font-p-md: 18px;
@@ -28,4 +29,8 @@
   --space-5: 32px;
   --space-6: 64px;
   --size-main: 1216px;
+}
+
+body {
+  font-family: var(--font-nunito);
 }

@@ -22,15 +22,48 @@
   --font-p-lg: 20px;
   --font-p-md: 18px;
   --font-p-sm: 16px;
-  --space-1: 4px;
-  --space-2: 8px;
-  --space-3: 16px;
-  --space-4: 24px;
-  --space-5: 32px;
-  --space-6: 64px;
-  --size-main: 1216px;
+  --line-height-normal: 1.5;
+  --radius-lg: 24px;
+  --radius-md: 12px;
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.5rem;
+  --space-6: 2rem;
+  --space-7: 2.5rem;
+  --space-8: 3rem;
+  --space-9: 4rem;
+  --space-10: 5rem;
+  --space-11: 6rem;
+  --space-12: 10rem;
+  --size-md: 1216px;
+}
+
+html {
+  height: 100%;
 }
 
 body {
   font-family: var(--font-nunito);
+  font-size: var(--font-p-md);
+  line-height: var(--line-height-normal);
+  height: 100%;
+}
+
+#___gatsby,
+#gatsby-focus-wrapper,
+main {
+  height: 100%;
+}
+
+p {
+  margin: 0;
+}
+
+h1 {
+  font-size: var(--font-p-sm);
+  font-weight: 600;
+  letter-spacing: 0.08rem;
+  text-transform: uppercase;
 }

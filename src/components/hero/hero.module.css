@@ -1,0 +1,59 @@
+.hero {
+  height: 100%;
+  padding: var(--space-5);
+  width: 100%;
+}
+
+.wrapper {
+  border-radius: var(--radius-lg);
+  display: grid;
+  height: 100%;
+  overflow: hidden;
+}
+
+.contentWrapper {
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0) 0%,
+    rgba(0, 0, 0, 0.5) 100%
+  );
+  display: grid;
+  grid-area: 1/1;
+  place-items: end center;
+  position: relative;
+}
+
+.content {
+  color: var(--color-white);
+  display: grid;
+  gap: 24px;
+  grid-template-columns: repeat(10, 1fr);
+  max-width: var(--size-md);
+  padding: var(--space-8) var(--space-5);
+}
+
+.logo {
+  display: flex;
+  flex-direction: column;
+  grid-column: 1/5;
+
+  & svg {
+    fill: var(--color-white);
+    width: 100%;
+  }
+}
+
+.title {
+  margin-top: var(--space-7);
+}
+
+.presentation {
+  display: flex;
+  flex-direction: column;
+  grid-column: 7/11;
+  justify-content: flex-end;
+
+  & p + p {
+    margin-top: var(--space-4);
+  }
+}

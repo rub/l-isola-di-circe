@@ -1,10 +1,11 @@
 import * as React from "react";
 import Layout from "../components/layout/layout";
+import Hero from "../components/hero/hero";
 
 const IndexPage = () => {
   return (
     <Layout>
-      <h1>L'isola di Circe</h1>
+      <Hero />
     </Layout>
   );
 };

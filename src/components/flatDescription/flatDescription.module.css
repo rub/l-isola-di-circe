@@ -1,0 +1,16 @@
+.imagesGrid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: repeat(12, 1fr);
+}
+
+.imageBig {
+  border-radius: var(--radius-md);
+  grid-area: 1 / 1 / 11 / 11;
+}
+
+.imageSmall {
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-lg);
+  grid-area: 9 / 7 / 13 / 13;
+}

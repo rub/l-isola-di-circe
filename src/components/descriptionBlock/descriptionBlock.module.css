@@ -1,0 +1,24 @@
+.description {
+  display: flex;
+  justify-content: center;
+  padding: var(--space-10) var(--space-5);
+}
+
+.wrapper {
+  align-items: center;
+  display: flex;
+  gap: var(--space-12);
+  max-width: var(--size-md);
+}
+
+.information {
+  flex: 1;
+}
+
+.text {
+  margin-top: var(--space-5);
+}
+
+.media {
+  flex: 1;
+}

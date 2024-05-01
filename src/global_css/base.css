@@ -24,8 +24,13 @@
   --font-p-sm: 16px;
   --font-title: 48px;
   --line-height-normal: 1.5;
+  --line-height-title: 1.15;
   --radius-lg: 24px;
   --radius-md: 12px;
+  --shadow-lg: 0px 197px 55px 0px rgba(0, 0, 0, 0),
+    0px 126px 51px 0px rgba(0, 0, 0, 0.01),
+    0px 71px 43px 0px rgba(0, 0, 0, 0.05), 0px 32px 32px 0px rgba(0, 0, 0, 0.09),
+    0px 8px 17px 0px rgba(0, 0, 0, 0.1);
   --space-1: 0.25rem;
   --space-2: 0.5rem;
   --space-3: 0.75rem;
@@ -37,7 +42,7 @@
   --space-9: 4rem;
   --space-10: 5rem;
   --space-11: 6rem;
-  --space-12: 10rem;
+  --space-12: 8rem;
   --size-md: 1216px;
 }
 
@@ -46,6 +51,7 @@ html {
 }
 
 body {
+  color: var(--color-neutral-4);
   font-family: var(--font-nunito);
   font-size: var(--font-p-md);
   line-height: var(--line-height-normal);
@@ -62,9 +68,20 @@ p {
   margin: 0;
 }
 
+h1,
+h2 {
+  margin: 0;
+}
+
 h1 {
   font-size: var(--font-p-sm);
   font-weight: 600;
   letter-spacing: var(--font-letter-spacing);
   text-transform: uppercase;
+}
+
+h2 {
+  font-size: var(--font-title);
+  font-weight: 400;
+  line-height: var(--line-height-title);
 }

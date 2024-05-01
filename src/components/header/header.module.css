@@ -2,7 +2,12 @@
   display: flex;
   justify-content: flex-end;
   padding: var(--space-8);
+  pointer-events: none;
   position: fixed;
   width: 100%;
   z-index: 9999;
+
+  & > * {
+    pointer-events: all;
+  }
 }

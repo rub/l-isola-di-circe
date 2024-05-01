@@ -1,0 +1,24 @@
+.sticker {
+  align-items: center;
+  background-color: var(--color-misc-cream-light);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  gap: var(--space-2);
+  padding: var(--space-3) var(--space-4);
+}
+
+.info {
+  color: var(--color-neutral-3);
+  font-size: var(--font-p-sm);
+  line-height: var(--line-height-dense);
+}
+
+.infoPrimary {
+  font-weight: 700;
+}
+
+.icon {
+  align-items: center;
+  display: flex;
+}

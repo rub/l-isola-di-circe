@@ -5,7 +5,7 @@
   color: var(--color-accent);
   filter: drop-shadow(0 0 0 var(--color-accent));
   font-size: var(--font-p-sm);
-  font-weight: 600;
+  font-weight: 700;
   letter-spacing: var(--font-letter-spacing);
   padding: var(--space-4) var(--space-6);
   position: relative;

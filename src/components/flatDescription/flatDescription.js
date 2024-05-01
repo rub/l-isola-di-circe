@@ -6,7 +6,15 @@ import { imagesGrid, imageBig, imageSmall } from "./flatDescription.module.css";
 const FlatDescription = () => (
   <DescriptionBlock
     title="Accogliente, con una vista suggestiva"
-    copy="L’appartamento si trova in una palazzina tranquilla, offrendo pace e privacy. Il punto di forza è nel suo terrazzino panoramico, perfetto per colazioni all’aperto o serate rilassanti sotto le stelle con vista sulla Cupola della Basilica di Santa Maria degli Angeli e dei giardini del Domus Madonna delle Rose."
+    copy={
+      <p>
+        L’appartamento si trova in una palazzina tranquilla, offrendo pace e
+        privacy. Il punto di forza è nel suo terrazzino panoramico, perfetto per
+        colazioni all’aperto o serate rilassanti sotto le stelle con vista sulla
+        Cupola della Basilica di Santa Maria degli Angeli e dei giardini del
+        Domus Madonna delle Rose.
+      </p>
+    }
   >
     <div className={imagesGrid}>
       <StaticImage

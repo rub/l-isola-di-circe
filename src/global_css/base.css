@@ -21,9 +21,10 @@
   --font-nunito: "Nunito", sans-serif;
   --font-p-lg: 20px;
   --font-p-md: 18px;
-  --font-p-sm: 16px;
+  --font-p-sm: 1rem;
   --font-title: 48px;
   --line-height-normal: 1.5;
+  --line-height-dense: 1.25;
   --line-height-title: 1.15;
   --radius-lg: 24px;
   --radius-md: 12px;
@@ -31,6 +32,10 @@
     0px 126px 51px 0px rgba(0, 0, 0, 0.01),
     0px 71px 43px 0px rgba(0, 0, 0, 0.05), 0px 32px 32px 0px rgba(0, 0, 0, 0.09),
     0px 8px 17px 0px rgba(0, 0, 0, 0.1);
+  --shadow-sm: 0px 165px 46px 0px rgba(0, 0, 0, 0),
+    0px 106px 42px 0px rgba(0, 0, 0, 0.01),
+    0px 59px 36px 0px rgba(0, 0, 0, 0.05), 0px 26px 26px 0px rgba(0, 0, 0, 0.09),
+    0px 7px 15px 0px rgba(0, 0, 0, 0.1);
   --space-1: 0.25rem;
   --space-2: 0.5rem;
   --space-3: 0.75rem;

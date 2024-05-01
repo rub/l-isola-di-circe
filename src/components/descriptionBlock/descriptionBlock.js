@@ -12,7 +12,7 @@ const DescriptionBlock = ({ title, copy, children }) => (
     <div className={wrapper}>
       <div className={information}>
         <h2>{title}</h2>
-        <p className={text}>{copy}</p>
+        <div className={text}>{copy}</div>
       </div>
       <div className={media}>{children}</div>
     </div>

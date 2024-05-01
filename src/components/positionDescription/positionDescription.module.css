@@ -1,0 +1,36 @@
+.imageGrid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: repeat(12, 1fr);
+  position: relative;
+}
+
+.parkingInfo,
+.trainInfo,
+.busInfo {
+  fill: var(--color-neutral-3);
+  justify-content: space-between;
+  position: absolute;
+  width: 240px;
+  z-index: 10;
+}
+
+.parkingInfo {
+  left: 0;
+  top: var(--space-9);
+}
+
+.trainInfo {
+  bottom: var(--space-9);
+  left: 0;
+}
+
+.busInfo {
+  bottom: var(--space-9);
+  right: 0;
+}
+
+.image {
+  border-radius: var(--radius-md);
+  grid-area: 2 / 2 / 12 / 12;
+}

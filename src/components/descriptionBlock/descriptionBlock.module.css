@@ -9,6 +9,7 @@
   display: flex;
   gap: var(--space-12);
   max-width: var(--size-md);
+  width: 100%;
 }
 
 .information {
@@ -24,5 +25,6 @@
 }
 
 .media {
+  display: flex;
   flex: 1;
 }

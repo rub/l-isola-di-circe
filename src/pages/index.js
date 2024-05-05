@@ -3,6 +3,7 @@ import Layout from "../components/layout/layout";
 import Hero from "../components/hero/hero";
 import FlatDescription from "../components/flatDescription/flatDescription";
 import PositionDescription from "../components/positionDescription/positionDescription";
+import Directions from "../components/directions/directions";
 
 const IndexPage = () => {
   return (
@@ -10,6 +11,7 @@ const IndexPage = () => {
       <Hero />
       <FlatDescription />
       <PositionDescription />
+      <Directions />
     </Layout>
   );
 };

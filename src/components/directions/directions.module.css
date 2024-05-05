@@ -1,0 +1,47 @@
+.directions {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  padding: var(--space-10) var(--space-5);
+}
+
+.wrapper {
+  max-width: var(--size-md);
+  width: 100%;
+}
+
+.address {
+  font-weight: 600;
+  margin-top: var(--space-5);
+}
+
+.directionsBlock {
+  display: flex;
+  gap: var(--space-10);
+  margin-top: var(--space-5);
+}
+
+.direction {
+  display: flex;
+  gap: var(--space-4);
+  flex: 1;
+}
+
+.icon {
+  flex-shrink: 0;
+}
+
+.mapContent {
+  border-radius: var(--radius-md);
+  margin-top: var(--space-10);
+  height: 480px;
+  width: 100%;
+
+  & .gm-svpc {
+    border-radius: 8px !important;
+  }
+}
+
+.gm-svpc {
+  border-radius: 8px !important;
+}

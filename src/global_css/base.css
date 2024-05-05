@@ -90,3 +90,23 @@ h2 {
   font-weight: 400;
   line-height: var(--line-height-title);
 }
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* Google Maps styles */
+.gmnoprint {
+  bottom: auto !important;
+}
+
+.gm-svpc,
+.gmnoprint > div {
+  border-radius: 8px !important;
+}
+
+.gm-style img {
+  width: 70px !important;
+}

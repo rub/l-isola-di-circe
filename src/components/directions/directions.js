@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from "react";
+import { Loader } from "@googlemaps/js-api-loader";
 import customMarkerIcon from "../../images/map-marker.png";
 import Icon from "../icon/icon";
-import { Loader } from "@googlemaps/js-api-loader";
 import {
   directions,
   wrapper,
@@ -17,7 +17,7 @@ const Directions = () => {
 
   useEffect(() => {
     const loader = new Loader({
-      apiKey: "AIzaSyDThVMgcyRhh81_XHl1kUIRc3C3d2vDOJw",
+      apiKey: process.env.GATSBY_GOOGLE_API_KEY,
       version: "quarterly",
       libraries: ["marker"],
     });

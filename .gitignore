@@ -13,3 +13,7 @@ public
 !.yarn/releases
 !.yarn/sdks
 !.yarn/versions
+
+# Env
+.env.development
+.env.production

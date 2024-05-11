@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from "react";
 import { Loader } from "@googlemaps/js-api-loader";
-import customMarkerIcon from "../../images/map-marker.png";
+import homeMarker from "../../images/home-pin.svg";
 import Icon from "../icon/icon";
 import {
   directions,
@@ -38,15 +38,19 @@ const Directions = () => {
 
       // Create an image element for the custom icon
       const customIcon = document.createElement("img");
-      customIcon.src = customMarkerIcon;
-
-      // Create an AdvancedMarkerElement with the custom icon
-      new AdvancedMarkerElement({
-        map: map,
-        position: { lat: 43.05904963601297, lng: 12.581099046423818 },
-        content: customIcon,
-        title: "L'Isola di Circe",
-      });
+      customIcon.src = homeMarker;
+      customIcon.alt = "L'Isola di Circe";
+      customIcon.onload = () => {
+        new window.google.maps.Marker({
+          position: { lat: 43.05904963601297, lng: 12.581099046423818 },
+          map,
+          title: "L'Isola di Circe",
+          icon: {
+            url: homeMarker,
+            scaledSize: new window.google.maps.Size(55, 64),
+          },
+        });
+      };
     });
   }, []);
 

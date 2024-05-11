@@ -19,7 +19,7 @@ const Directions = () => {
     const loader = new Loader({
       apiKey: process.env.GATSBY_GOOGLE_API_KEY,
       version: "quarterly",
-      libraries: ["marker"],
+      libraries: ["marker", "places"],
     });
 
     loader.load().then(async () => {

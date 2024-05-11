@@ -11,26 +11,40 @@
   fill: var(--color-neutral-3);
   justify-content: space-between;
   position: absolute;
-  width: 240px;
+  width: 250px;
   z-index: 10;
 }
 
+.selectedSticker {
+  background-color: var(--color-misc-cream-light);
+  border: 2px solid var(--color-accent);
+
+  &:hover {
+    border: 2px solid var(--color-accent);
+  }
+}
+
 .parkingInfo {
+  bottom: var(--space-9);
+  left: 0;
+}
+
+.trainInfo {
+  right: 0;
+  top: var(--space-9);
+}
+
+.busInfo {
   left: 0;
   top: var(--space-9);
 }
 
-.trainInfo {
-  bottom: var(--space-9);
-  left: 0;
-}
-
-.busInfo {
-  bottom: var(--space-9);
-  right: 0;
-}
-
-.image {
+.mapContent {
   border-radius: var(--radius-md);
   grid-area: 2 / 2 / 12 / 12;
+  height: 0;
+  overflow: hidden;
+  padding-top: 100%;
+  position: relative;
+  width: 100%;
 }

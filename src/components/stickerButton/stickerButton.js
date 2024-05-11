@@ -1,23 +1,32 @@
 import React from "react";
 import Icon from "../icon/icon";
-import { sticker, info, infoPrimary, icon } from "./sticker.module.css";
+import {
+  stickerButton,
+  info,
+  infoPrimary,
+  icon,
+} from "./stickerButton.module.css";
 
-const Sticker = ({
+const StickerButton = ({
   className,
   primaryText,
   secondaryText,
   iconWrapperStyle,
-  iconRight = false,
+  onClick,
 }) => (
-  <div className={`${sticker} ${className}`}>
-    <div className={info} style={iconRight ? { order: "2" } : {}}>
+  <button
+    className={`${stickerButton} ${className}`}
+    onClick={onClick}
+    aria-label={primaryText}
+  >
+    <div className={info}>
       <p className={infoPrimary}>{primaryText}</p>
       <p>{secondaryText}</p>
     </div>
     <div className={icon} style={iconWrapperStyle}>
       <Icon name="FootStep" width={40} height={40} />
     </div>
-  </div>
+  </button>
 );
 
-export default Sticker;
+export default StickerButton;

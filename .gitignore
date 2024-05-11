@@ -17,3 +17,6 @@ public
 # Env
 .env.development
 .env.production
+
+# MacOS
+.DS_Store

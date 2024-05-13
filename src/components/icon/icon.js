@@ -1,7 +1,7 @@
 import React from "react";
 import * as Icons from "../../icons";
 
-const Icon = ({ name, className, fill, width, height }) => {
+const Icon = ({ name, className, fill = "none", width, height }) => {
   const SVGIcon = Icons[name];
 
   return (

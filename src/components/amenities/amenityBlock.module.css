@@ -1,0 +1,49 @@
+.amenityBlock {
+  align-items: center;
+  border-radius: var(--radius-lg);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+  justify-content: center;
+  padding: var(--space-5);
+
+  &.lilac {
+    background-color: var(--color-misc-lilac-light);
+  }
+
+  &.skyBlue {
+    background-color: var(--color-misc-sky-blue-light);
+  }
+
+  &.butterscotch {
+    background-color: var(--color-misc-butterscotch-light);
+  }
+
+  &.springGreen {
+    background-color: var(--color-misc-spring-green-light);
+  }
+
+  &.cream {
+    background-color: var(--color-misc-cream-light);
+  }
+
+  &.peach {
+    background-color: var(--color-misc-peach-light);
+  }
+}
+
+.amenityIcon {
+  height: 96px;
+  width: 100%;
+}
+
+.floorPlanIcon {
+  height: 320px;
+  width: 100%;
+}
+
+.title {
+  font-size: var(--font-p-sm);
+  font-weight: 600;
+  line-height: var(--line-height-dense);
+}

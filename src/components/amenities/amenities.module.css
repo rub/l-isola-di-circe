@@ -1,0 +1,22 @@
+.amenities {
+  display: flex;
+  justify-content: center;
+  padding: var(--space-10) var(--space-5);
+}
+
+.wrapper {
+  max-width: var(--size-md);
+  width: 100%;
+}
+
+.amenitiesGrid {
+  display: grid;
+  gap: var(--space-5);
+  grid-template-areas:
+    "wifi air-conditioner generic generic kitchen kitchen"
+    "washing-machine heating generic generic smart-tv closet"
+    "parking parking pets baby baby self-check-in";
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: auto;
+  margin-top: var(--space-8);
+}

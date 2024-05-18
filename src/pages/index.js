@@ -2,6 +2,7 @@ import * as React from "react";
 import Layout from "../components/layout/layout";
 import Hero from "../components/hero/hero";
 import FlatDescription from "../components/flatDescription/flatDescription";
+import Gallery from "../components/gallery/gallery";
 import PositionDescription from "../components/positionDescription/positionDescription";
 import Amenities from "../components/amenities/amenities";
 import Directions from "../components/directions/directions";
@@ -11,6 +12,7 @@ const IndexPage = () => {
     <Layout>
       <Hero />
       <FlatDescription />
+      <Gallery />
       <PositionDescription />
       <Amenities />
       <Directions />

@@ -1,0 +1,121 @@
+.gallery {
+  height: 834px;
+  /* overflow: hidden; */
+  margin: var(--space-10) 0;
+  position: relative;
+  width: 100%;
+}
+
+.titleWrapper {
+  display: flex;
+  justify-content: center;
+  left: 0;
+  padding: 0 var(--space-5);
+  position: absolute;
+  /* Let the title start from the 2nd row of the columns grid */
+  top: 8%;
+  width: 100%;
+}
+
+.title {
+  max-width: var(--size-md);
+  width: 100%;
+}
+
+.wrapper {
+  display: grid;
+  gap: var(--space-5);
+  grid-template-columns: repeat(6, 1fr);
+  height: 100%;
+  justify-content: center;
+  left: 50%;
+  position: relative;
+  transform: translateX(-50%);
+  width: var(--size-lg);
+}
+
+.gridColumn {
+  display: grid;
+  flex: 1;
+  gap: var(--space-5);
+  grid-template-rows: repeat(12, 1fr);
+  height: 100%;
+
+  & .picture {
+    border-radius: var(--radius-md);
+    cursor: pointer;
+    transition: all 120ms ease-out;
+
+    &:hover {
+      filter: drop-shadow(0.5rem 0.5rem 0 var(--color-misc-cream));
+      transform: translate3d(-0.5rem, -0.5rem, 0);
+    }
+
+    &:active {
+      filter: drop-shadow(0 0 0 var(--color-misc-cream));
+      transform: translate3d(0, 0, 0);
+    }
+  }
+
+  &:nth-of-type(1) .picture {
+    &:nth-of-type(1) {
+      grid-row-start: 3;
+      grid-row-end: 6;
+    }
+
+    &:nth-of-type(2) {
+      grid-row-start: 6;
+      grid-row-end: 12;
+    }
+  }
+
+  &:nth-of-type(2) .picture {
+    &:nth-of-type(1) {
+      grid-row-start: 4;
+      grid-row-end: 10;
+    }
+  }
+
+  &:nth-of-type(3) .picture {
+    &:nth-of-type(1) {
+      grid-row-start: 5;
+      grid-row-end: 8;
+    }
+
+    &:nth-of-type(2) {
+      grid-row-start: 8;
+      grid-row-end: 11;
+    }
+  }
+
+  &:nth-of-type(4) .picture {
+    &:nth-of-type(1) {
+      grid-row-start: 4;
+      grid-row-end: 7;
+    }
+
+    &:nth-of-type(2) {
+      grid-row-start: 7;
+      grid-row-end: 13;
+    }
+  }
+
+  &:nth-of-type(5) .picture {
+    &:nth-of-type(1) {
+      grid-row-start: 3;
+      grid-row-end: 9;
+    }
+  }
+
+  &:nth-of-type(6) .picture {
+    &:nth-of-type(1) {
+      grid-row-start: 1;
+      grid-row-end: 4;
+    }
+
+    &:nth-of-type(2) {
+      grid-row-start: 4;
+      grid-row-end: 10;
+    }
+  }
+}

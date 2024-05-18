@@ -48,6 +48,7 @@
   --space-10: 5rem;
   --space-11: 6rem;
   --space-12: 8rem;
+  --size-lg: 1842px;
   --size-md: 1216px;
 }
 
@@ -61,6 +62,7 @@ body {
   font-size: var(--font-p-md);
   line-height: var(--line-height-normal);
   height: 100%;
+  overflow-x: hidden;
 }
 
 #___gatsby,

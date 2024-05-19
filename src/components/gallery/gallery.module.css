@@ -1,6 +1,5 @@
 .gallery {
   height: 834px;
-  /* overflow: hidden; */
   margin: var(--space-10) 0;
   position: relative;
   width: 100%;
@@ -23,9 +22,8 @@
 }
 
 .wrapper {
-  display: grid;
+  display: flex;
   gap: var(--space-5);
-  grid-template-columns: repeat(6, 1fr);
   height: 100%;
   justify-content: center;
   left: 50%;
@@ -47,12 +45,12 @@
     transition: all 120ms ease-out;
 
     &:hover {
-      filter: drop-shadow(0.5rem 0.5rem 0 var(--color-misc-cream));
+      filter: drop-shadow(0.5rem 0.5rem 0 hsl(52, 9%, 68%));
       transform: translate3d(-0.5rem, -0.5rem, 0);
     }
 
     &:active {
-      filter: drop-shadow(0 0 0 var(--color-misc-cream));
+      filter: drop-shadow(0 0 0 hsl(51, 7%, 40%));
       transform: translate3d(0, 0, 0);
     }
   }

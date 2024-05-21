@@ -1,9 +1,9 @@
 import React, { useEffect, useRef, useState, useCallback } from "react";
 import { Loader } from "@googlemaps/js-api-loader";
-import homeMarker from "../../images/home-pin.svg";
-import busMarker from "../../images/bus-marker.svg";
-import trainMarker from "../../images/train-marker.svg";
-import parkingMarker from "../../images/parking-marker.svg";
+import homeMarker from "../../icons/home-pin.svg";
+import busMarker from "../../icons/bus-marker.svg";
+import trainMarker from "../../icons/train-marker.svg";
+import parkingMarker from "../../icons/parking-marker.svg";
 import DescriptionBlock from "../descriptionBlock/descriptionBlock";
 import Sticker from "../stickerButton/stickerButton";
 import {

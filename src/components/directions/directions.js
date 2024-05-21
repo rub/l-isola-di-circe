@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from "react";
 import { Loader } from "@googlemaps/js-api-loader";
-import homeMarker from "../../images/home-pin.svg";
+import homeMarker from "../../icons/home-pin.svg";
 import Icon from "../icon/icon";
 import {
   directions,

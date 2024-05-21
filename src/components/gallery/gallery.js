@@ -1,33 +1,48 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useStaticQuery, graphql } from "gatsby";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
+import PlainButton from "../plainButton/plainButton";
+import Icon from "../icon/icon";
 import {
   gallery,
   wrapper,
-  gridColumn,
+  pictureWrapper,
   picture,
-  titleWrapper,
+  headWrapper,
+  head,
   title,
+  carousel,
+  carouselShown,
+  dismissButton,
+  carouselImageWrapper,
+  fadeIn,
+  fadeOut,
+  carouselImage,
+  navigationButton,
+  prev,
+  next,
+  imageCounter,
 } from "./gallery.module.css";
 
-// TODO: Use ::before to display the shadow behind pictures.
 const Gallery = () => {
+  const [isCarouselShown, setIsCarouselShown] = useState(false);
+  const [currentImage, setCurrentImage] = useState(0);
+  const [transitionImage, setTransitionImage] = useState(0);
+  const [fade, setFade] = useState("");
+
   const data = useStaticQuery(graphql`
-    query MyQuery {
+    query GalleryQuery {
       allFile(
         filter: {
           sourceInstanceName: { eq: "images" }
-          relativePath: { glob: "gallery/*" }
+          relativePath: { glob: "carousel/*" }
         }
       ) {
         edges {
           node {
+            base
             childImageSharp {
-              gatsbyImageData(
-                width: 300
-                placeholder: DOMINANT_COLOR
-                formats: [AUTO, WEBP, AVIF]
-              )
+              gatsbyImageData(placeholder: DOMINANT_COLOR, width: 1024)
             }
           }
         }
@@ -35,38 +50,112 @@ const Gallery = () => {
     }
   `);
 
-  const images = data.allFile.edges.map((edge) => {
-    const image = getImage(edge.node.childImageSharp);
-    return { gatsbyImage: image };
-  });
+  const images = data.allFile.edges.map(({ node }) => ({
+    gatsbyImage: getImage(node.childImageSharp.gatsbyImageData),
+    // Remove file extension and replace any dash with a space
+    altText: node.base.split(".")[0].replace(/-/g, " "),
+  }));
 
-  const columns = [
-    [images[0], images[1]], // 1st column: 1st and 2nd images
-    [images[2]], // 2nd column: 3rd image
-    [images[3], images[4]], // 3rd column: 4th and 5th images
-    [images[5], images[6]], // 4th column: 6th and 7th images
-    [images[7]], // 5th column: 8th image
-    [images[8], images[9]], // 6th column: 9th and 10th images
-  ].filter((column) => column[0]);
+  const showCarousel = (index) => {
+    setCurrentImage(index);
+    setTransitionImage(index);
+    setIsCarouselShown(true);
+    setFade(fadeIn);
+  };
+
+  const dismissCarousel = () => {
+    setIsCarouselShown(false);
+  };
+
+  const changeImage = (index) => {
+    setFade(fadeOut);
+    setTimeout(() => {
+      setCurrentImage(index);
+      setTransitionImage(index);
+      setFade(fadeIn);
+    }, 120); // This duration should match the CSS transition time
+  };
+
+  useEffect(() => {
+    const handleKeyDown = (e) => {
+      if (e.key === "Escape") {
+        dismissCarousel();
+      } else if (e.key === "ArrowRight") {
+        changeImage((currentImage + 1) % images.length);
+      } else if (e.key === "ArrowLeft") {
+        changeImage((currentImage - 1 + images.length) % images.length);
+      }
+    };
+
+    if (isCarouselShown) {
+      window.addEventListener("keydown", handleKeyDown);
+    }
+
+    return () => {
+      window.removeEventListener("keydown", handleKeyDown);
+    };
+  }, [isCarouselShown, currentImage, images.length]);
 
   return (
     <div className={gallery}>
-      <div className={titleWrapper}>
-        <h2 className={title}>Esplora il nostro appartamento</h2>
+      <div className={headWrapper}>
+        <div className={head}>
+          <h2 className={title}>Esplora il nostro appartamento</h2>
+          <PlainButton
+            label="Vedi tutte le foto"
+            icon="Gallery"
+            onClick={() => showCarousel(0)}
+          />
+        </div>
       </div>
       <div className={wrapper}>
-        {columns.map((columnImages, columnIndex) => (
-          <div key={columnIndex} className={gridColumn}>
-            {columnImages.map((imageData, imageIndex) => (
+        {
+          // Get the first 10 images
+          images.slice(0, 10).map((imageData, index) => (
+            <div
+              key={index}
+              className={pictureWrapper}
+              onClick={() => showCarousel(index)}
+            >
               <GatsbyImage
-                key={imageIndex}
                 className={picture}
                 image={imageData.gatsbyImage}
-                alt={`Gallery image ${columnIndex * 2 + imageIndex + 1}`}
+                alt={imageData.altText}
               />
-            ))}
-          </div>
-        ))}
+            </div>
+          ))
+        }
+      </div>
+      <div className={`${carousel} ${isCarouselShown ? carouselShown : ""}`}>
+        <button className={dismissButton} onClick={dismissCarousel}>
+          <Icon name="Close" width={48} height={48} />
+        </button>
+        <div className={carouselImageWrapper}>
+          <GatsbyImage
+            key={transitionImage}
+            className={`${carouselImage} ${fade}`}
+            image={images[transitionImage].gatsbyImage}
+            alt={images[transitionImage].altText}
+            imgStyle={{ objectFit: "contain" }}
+          />
+        </div>
+        <button
+          className={`${navigationButton} ${prev}`}
+          onClick={() =>
+            changeImage((currentImage - 1 + images.length) % images.length)
+          }
+        >
+          <Icon name="NavigateBack" width={48} height={48} />
+        </button>
+        <button
+          className={`${navigationButton} ${next}`}
+          onClick={() => changeImage((currentImage + 1) % images.length)}
+        >
+          <Icon name="NavigateForward" width={48} height={48} />
+        </button>
+        <div className={imageCounter}>{`${currentImage + 1} / ${
+          images.length
+        }`}</div>
       </div>
     </div>
   );

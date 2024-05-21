@@ -5,7 +5,7 @@
   width: 100%;
 }
 
-.titleWrapper {
+.headWrapper {
   display: flex;
   justify-content: center;
   left: 0;
@@ -14,16 +14,27 @@
   /* Let the title start from the 2nd row of the columns grid */
   top: 8%;
   width: 100%;
+  z-index: 1;
 }
 
-.title {
+.head {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
   max-width: var(--size-md);
   width: 100%;
 }
 
+.title {
+  width: 100%;
+}
+
 .wrapper {
-  display: flex;
+  display: grid;
   gap: var(--space-5);
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: repeat(12, 1fr);
   height: 100%;
   justify-content: center;
   left: 50%;
@@ -32,88 +43,152 @@
   width: var(--size-lg);
 }
 
-.gridColumn {
-  display: grid;
-  flex: 1;
-  gap: var(--space-5);
-  grid-template-rows: repeat(12, 1fr);
+.pictureWrapper {
+  background-color: hsl(52, 9%, 68%);
+  border-radius: var(--radius-md);
+  cursor: pointer;
+
+  &:nth-of-type(1) {
+    grid-area: 3 / 1 / 6 / 1;
+  }
+
+  &:nth-of-type(2) {
+    grid-area: 6 / 1 / 12 / 1;
+  }
+
+  &:nth-of-type(3) {
+    grid-area: 4 / 2 / 10 / 2;
+  }
+
+  &:nth-of-type(4) {
+    grid-area: 5 / 3 / 8 / 3;
+  }
+
+  &:nth-of-type(5) {
+    grid-area: 8 / 3 / 11 / 3;
+  }
+
+  &:nth-of-type(6) {
+    grid-area: 4 / 4 / 7 / 4;
+  }
+
+  &:nth-of-type(7) {
+    grid-area: 7 / 4 / 13 / 4;
+  }
+
+  &:nth-of-type(8) {
+    grid-area: 3 / 5 / 9 / 5;
+  }
+
+  &:nth-of-type(9) {
+    grid-area: 1 / 6 / 4 / 6;
+  }
+
+  &:nth-of-type(10) {
+    grid-area: 4 / 6 / 10 / 6;
+  }
+}
+
+.picture {
+  border-radius: var(--radius-md);
   height: 100%;
+  transition: transform 120ms ease-out;
 
-  & .picture {
-    border-radius: var(--radius-md);
-    cursor: pointer;
-    transition: all 120ms ease-out;
-
-    &:hover {
-      filter: drop-shadow(0.5rem 0.5rem 0 hsl(52, 9%, 68%));
-      transform: translate3d(-0.5rem, -0.5rem, 0);
-    }
-
-    &:active {
-      filter: drop-shadow(0 0 0 hsl(51, 7%, 40%));
-      transform: translate3d(0, 0, 0);
-    }
+  &:hover {
+    transform: translate3d(-0.5rem, -0.5rem, 0);
   }
 
-  &:nth-of-type(1) .picture {
-    &:nth-of-type(1) {
-      grid-row-start: 3;
-      grid-row-end: 6;
-    }
+  &:active {
+    transform: translate3d(0, 0, 0);
+  }
+}
 
-    &:nth-of-type(2) {
-      grid-row-start: 6;
-      grid-row-end: 12;
-    }
+.carousel {
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.85);
+  display: flex;
+  height: 100%;
+  justify-content: center;
+  left: 0;
+  opacity: 0;
+  position: fixed;
+  transition: all 320ms ease-out;
+  top: 0;
+  visibility: hidden;
+  width: 100%;
+  z-index: 100;
+
+  &.carouselShown {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+.dismissButton {
+  cursor: pointer;
+  display: flex;
+  position: absolute;
+  right: var(--space-5);
+  top: var(--space-5);
+
+  & > svg {
+    stroke: var(--color-white);
+    transition: opacity 80ms ease-out;
   }
 
-  &:nth-of-type(2) .picture {
-    &:nth-of-type(1) {
-      grid-row-start: 4;
-      grid-row-end: 10;
-    }
+  &:hover > svg {
+    opacity: 0.8;
+  }
+}
+
+.carouselImageWrapper {
+  height: 80%;
+  max-width: 80%;
+  width: auto;
+}
+
+.carouselImage {
+  height: 100%;
+  transition: opacity 300ms ease-in-out;
+}
+
+.fadeIn {
+  opacity: 1;
+}
+
+.fadeOut {
+  opacity: 0.5;
+}
+
+.navigationButton {
+  background-color: transparent;
+  cursor: pointer;
+  display: flex;
+  position: absolute;
+
+  &.prev {
+    left: var(--space-5);
   }
 
-  &:nth-of-type(3) .picture {
-    &:nth-of-type(1) {
-      grid-row-start: 5;
-      grid-row-end: 8;
-    }
-
-    &:nth-of-type(2) {
-      grid-row-start: 8;
-      grid-row-end: 11;
-    }
+  &.next {
+    right: var(--space-5);
   }
 
-  &:nth-of-type(4) .picture {
-    &:nth-of-type(1) {
-      grid-row-start: 4;
-      grid-row-end: 7;
-    }
-
-    &:nth-of-type(2) {
-      grid-row-start: 7;
-      grid-row-end: 13;
-    }
+  & > svg {
+    fill: var(--color-white);
+    transition: opacity 80ms ease-out;
   }
 
-  &:nth-of-type(5) .picture {
-    &:nth-of-type(1) {
-      grid-row-start: 3;
-      grid-row-end: 9;
-    }
+  &:hover > svg {
+    opacity: 0.8;
   }
+}
 
-  &:nth-of-type(6) .picture {
-    &:nth-of-type(1) {
-      grid-row-start: 1;
-      grid-row-end: 4;
-    }
-
-    &:nth-of-type(2) {
-      grid-row-start: 4;
-      grid-row-end: 10;
-    }
-  }
+.imageCounter {
+  top: var(--space-6);
+  color: var(--color-white);
+  font-size: 1rem;
+  left: 50%;
+  position: absolute;
+  transform: translateX(-50%);
 }

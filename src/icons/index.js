@@ -1,3 +1,7 @@
+export { default as Gallery } from "./gallery";
+export { default as Close } from "./close";
+export { default as NavigateBack } from "./navigateBack";
+export { default as NavigateForward } from "./navigateForward";
 export { default as FootStep } from "./footStep";
 export { default as Train } from "./train";
 export { default as Car } from "./car";

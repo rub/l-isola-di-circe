@@ -1,0 +1,26 @@
+.plainButton {
+  align-items: center;
+  cursor: pointer;
+  display: flex;
+  font-weight: 600;
+  gap: var(--space-3);
+  opacity: 1;
+  position: relative;
+  transition: opacity 80ms ease-out;
+  width: fit-content;
+
+  &:hover {
+    opacity: 0.8;
+  }
+
+  &::after {
+    background-color: var(--color-neutral-4);
+    border-radius: 2px;
+    content: "";
+    height: 2px;
+    left: 0;
+    position: absolute;
+    top: 100%;
+    width: 100%;
+  }
+}

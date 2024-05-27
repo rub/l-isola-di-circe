@@ -107,6 +107,16 @@ button {
   -webkit-appearance: none;
 }
 
+a {
+  color: inherit;
+  display: inline-block;
+  transition: opacity 80ms ease-out;
+
+  &:hover {
+    opacity: 0.8;
+  }
+}
+
 ul {
   list-style-type: none;
   margin: 0;
